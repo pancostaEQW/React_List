@@ -1,16 +1,20 @@
+// @ts-nocheck
 import React, { useState } from "react";
 import MyInput from "./UI/input/MyInput";
 import MyButton from "./UI/button/MyButton";
 
 
+
 const PostForm = ({create}) => {
  
-  const [post, setPost] = useState({title: '', body: ''})
+  const [post, setPost] = useState({title: '', body: ''});
+  const [id, setId] = useState(1)
 
     const addNewPost = (e) => {
         e.preventDefault()
+        setId(id + 1)
         const newPost = {
-            ...post, id: Date.now()
+            ...post, id: id
         }
         create(newPost)
         setPost({title: '', body: ''})
@@ -18,11 +22,9 @@ const PostForm = ({create}) => {
 
     return (
         <form>
-        {/*upravlyaemii komp*/}
         <MyInput value={post.title} onChange={e => setPost({...post, title: e.target.value})} type='text' placeholder='Название поста'/>
-        {/*neupravlyaemii komp*/}
         <MyInput value={post.body} onChange={e => setPost({...post, body: e.target.value})} type='text' placeholder='Описание поста'/>
-        <MyButton onClick={addNewPost}>Создать пост</MyButton>
+        <MyButton key={id} onClick={addNewPost}>Создать пост</MyButton>
       </form>
     )
   }
