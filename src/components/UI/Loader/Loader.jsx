@@ -1,3 +1,4 @@
+// @ts-nocheck
 import React from 'react';
 import cl from './Loader.module.css';
 

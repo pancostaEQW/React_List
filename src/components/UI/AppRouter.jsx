@@ -1,3 +1,4 @@
+// @ts-nocheck
 import React from "react";
 import Error from "../../pages/Error";
 import Posts from "../../pages/Posts";

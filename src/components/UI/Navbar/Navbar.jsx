@@ -1,3 +1,4 @@
+// @ts-nocheck
 import React from "react";
 import { useContext } from "react";
 import { BrowserRouter, Switch, Route, Link } from "react-router-dom";

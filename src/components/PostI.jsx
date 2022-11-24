@@ -4,6 +4,11 @@ import MyButton from "./UI/button/MyButton";
 
 
 const PostI = (props) => {
+
+  let style = {
+    backgroundColor: 'red'
+  }
+
   const router = useHistory()
   return (
     <div className="post">
